@@ -438,6 +438,7 @@ button:hover {
 .projects-section p {
   font-size: 1rem;
   margin-bottom: 30px;
+  color: var(--primary-color);
 }
 
 /* Projects Container */
