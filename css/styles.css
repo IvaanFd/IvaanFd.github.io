@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* ===========================
+   Color Palette
+=========================== */
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #333;
+  --background-color: #f4f4f4;
+  --text-color: #444;
+  --white: #fff;
+}
+
+/* ===========================
+   General Style
+=========================== */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100%;
+}
+
+section {
+  padding: 4rem 2rem;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* ===========================
+  Text and Generic Styles
+=========================== */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 0.8rem;
+  font-weight: 275;
+}
+
+p {
+  color: var(--text-color);
+  margin: 1rem auto;
+  max-width: 800px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+
+/* ===========================
+   Header and Menu (Top Bar)
+=========================== */
+header {
+  background-color: var(--primary-color);
+  /* Mantén el color original */
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  /* Elimina sombras que puedan dar efecto de cuadro */
+  border: none;
+  /* Asegúrate de que no haya bordes */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-container a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-container a:hover {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+/* ===========================
+  Responsive para pantallas pequeñas
+=========================== */
+.hamburger-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .nav-container {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    /* Mantén el color en móvil */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .nav-container.open {
+    display: flex;
+  }
+
+  .nav-container a {
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+}
+
+/* ===========================
+   Style for the profile section
+=========================== */
+.hero-section {
+  background-color: transparent;
+  /* Remove any background color */
+  padding: 50px 20px;
+}
+
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: nowrap;
+  /* Keep image and text inline */
+}
+
+.hero-image img {
+  width: 450px;
+  /* Larger image */
+  height: auto;
+  object-fit: contain;
+  /* Scale the image respecting the aspect */
+  border-radius: 0;
+  /* No rounded borders */
+  background-color: transparent;
+  /* Ensure no background */
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+  /* Left aligned */
+}
+
+.hero-text .subtitle {
+  font-size: 1.5rem;
+  /* More prominent subtitle */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #666;
+  /* Secondary color */
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+}
+
+.primary-button:hover {
+  background-color: #3e8e41;
+  /* Dark green */
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.secondary-button:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-layout {
+    flex-direction: column;
+    /* Image and text stacked */
+    text-align: center;
+  }
+
+  .hero-image img {
+    margin-bottom: 20px;
+  }
+}
+
+
+/* ===========================
+   About Section
+=========================== */
+.about-section {
+  padding: 4rem 2rem;
+}
+
+/* General container for the cards */
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  /* Space between cards */
+  align-items: flex-start;
+  /* Align cards at the top */
+  gap: 20px;
+  /* Add spacing between cards */
+  padding: 20px;
+  flex-wrap: nowrap;
+  /* Ensure cards stay in the same row */
+}
+
+/* Individual card styling */
+.card {
+  background-color: #fff;
+  /* White background */
+  border-radius: 15px;
+  /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  flex: 1;
+  /* Ensure cards take equal space */
+  max-width: 400px;
+  /* Set maximum width for consistent size */
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth hover effect */
+}
+
+/* Hover effect for the cards */
+.card:hover {
+  transform: translateY(-5px);
+  /* Slight lift */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  /* More prominent shadow */
+}
+
+/* Icon styling */
+.card-icon {
+  font-size: 2rem;
+  color: #28a745;
+  /* Green for icons */
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Title of the card */
+.card-title {
+  font-size: 1.5rem;
+  /* Slightly larger title */
+  color: #28a745;
+  /* Green color */
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Individual sections within the card */
+.card-section {
+  margin-bottom: 20px;
+  /* Add space between sections */
+}
+
+/* Dates */
+.card-date {
+  font-size: 0.9rem;
+  color: #6c757d;
+  /* Neutral gray */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Content within sections */
+.card-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  /* Dark gray for readability */
+}
+
+.card-content .highlight {
+  font-weight: bold;
+  color: #28a745;
+  /* Green for highlights */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-container {
+    flex-wrap: wrap;
+    /* Allow cards to stack on smaller screens */
+    justify-content: center;
+    /* Center cards when stacked */
+  }
+
+  .card {
+    max-width: 100%;
+    /* Full width for smaller screens */
+  }
+}
+
+
+/* ===========================
+   Certs Section
+=========================== */
+.certs-filters {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.certs-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.certs-gallery img {
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.certs-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsiveness: for smaller screens */
+@media (max-width: 768px) {
+  .certs-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 per row on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .certs-gallery {
+    grid-template-columns: 1fr;
+    /* 1 per row on small screens */
+  }
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Projects Section
+=========================== */
+.projects-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.projects-section p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+/* Projects Container */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Center cards */
+  gap: 20px;
+  /* Add space between cards */
+  padding: 20px;
+}
+
+/* Project Card */
+.project-card {
+  width: 300px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card .project-title {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #f1f1f1;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  /* Lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Deeper shadow */
+}
+
+
+/* ===========================
+   Footer
+=========================== */
+footer {
+  background-color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 900px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+footer p {
+  color: var(--text-color);
+  margin: 1rem auto;
+  max-width: 800px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
