@@ -435,12 +435,6 @@ button:hover {
   text-align: center;
 }
 
-.projects-section p {
-  font-size: 1rem;
-  margin-bottom: 30px;
-  color: var(--primary-color);
-}
-
 /* Projects Container */
 .projects-container {
   display: flex;
@@ -479,6 +473,7 @@ button:hover {
   font-size: 1.2rem;
   font-weight: bold;
   background-color: #f1f1f1;
+  color: var(--primary-color);
 }
 
 .project-card:hover {
