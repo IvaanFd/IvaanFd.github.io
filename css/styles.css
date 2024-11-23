@@ -450,7 +450,7 @@ button:hover {
 .project-card {
   width: 300px;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: var(--background-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
@@ -472,7 +472,7 @@ button:hover {
   text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
-  background-color: #f1f1f1;
+  background-color: var(--background-color);
   color: var(--primary-color);
 }
 
