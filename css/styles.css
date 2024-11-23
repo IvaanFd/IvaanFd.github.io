@@ -6,7 +6,7 @@
 :root {
   --primary-color: #4CAF50;
   --secondary-color: #333;
-  --background-color: #f4f4f4;
+  --background-color: #fff;
   --text-color: #444;
   --white: #fff;
 }
@@ -273,7 +273,7 @@ header {
 
 /* Individual card styling */
 .card {
-  background-color: #fff;
+  background-color: var(--background-color);
   /* White background */
   border-radius: 15px;
   /* Rounded corners */
@@ -473,7 +473,7 @@ button:hover {
   font-size: 1.2rem;
   font-weight: bold;
   background-color: var(--background-color);
-  color: var(--primary-color);
+  color: #28a745
 }
 
 .project-card:hover {
