@@ -75,7 +75,6 @@ p {
 =========================== */
 header {
   background-color: var(--primary-color);
-  /* Mantén el color original */
   color: var(--white);
   padding: 0.5rem 1rem;
   position: sticky;
@@ -85,9 +84,9 @@ header {
   justify-content: center;
   align-items: center;
   box-shadow: none;
-  /* Elimina sombras que puedan dar efecto de cuadro */
+  /* Delete shadows that may give a boxy effect. */
   border: none;
-  /* Asegúrate de que no haya bordes */
+  /* Ensure that there are no edges */
 }
 
 .nav-container {
@@ -112,7 +111,7 @@ header {
 }
 
 /* ===========================
-  Responsive para pantallas pequeñas
+  Responsive for small devices
 =========================== */
 .hamburger-menu {
   display: none;
@@ -133,7 +132,6 @@ header {
     display: none;
     flex-direction: column;
     background-color: var(--primary-color);
-    /* Mantén el color en móvil */
     position: absolute;
     top: 100%;
     left: 0;
@@ -448,13 +446,13 @@ button:hover {
 
 .project-detail img {
   max-width: 100%;
-  /* Ajusta el tamaño al contenedor */
+  /* Adjust the size to the container */
   height: auto;
-  /* Mantén la proporción */
+  /* Maintain the proportion */
   display: block;
-  /* Elimina espacio extra debajo */
+  /* Remove extra space below */
   margin: 0 auto;
-  /* Centra la imagen */
+  /* Center the image */
 }
 
 /* Project Card */
