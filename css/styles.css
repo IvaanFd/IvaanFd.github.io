@@ -155,13 +155,13 @@ header {
 /* ===========================
    Style for the profile section
 =========================== */
-.hero-section {
+.home-section {
   background-color: transparent;
   /* Remove any background color */
   padding: 50px 20px;
 }
 
-.hero-layout {
+.home-layout {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -170,7 +170,7 @@ header {
   /* Keep image and text inline */
 }
 
-.hero-image img {
+.home-image img {
   width: 450px;
   /* Larger image */
   height: auto;
@@ -182,13 +182,13 @@ header {
   /* Ensure no background */
 }
 
-.hero-text {
+.home-text {
   flex: 1;
   text-align: left;
   /* Left aligned */
 }
 
-.hero-text .subtitle {
+.home-text .subtitle {
   font-size: 1.5rem;
   /* More prominent subtitle */
   margin-top: 10px;
@@ -198,7 +198,7 @@ header {
 }
 
 /* Buttons */
-.hero-buttons {
+.home-buttons {
   display: flex;
   gap: 15px;
 }
@@ -238,13 +238,13 @@ header {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-layout {
+  .home-layout {
     flex-direction: column;
     /* Image and text stacked */
     text-align: center;
   }
 
-  .hero-image img {
+  .home-image img {
     margin-bottom: 20px;
   }
 }
@@ -444,6 +444,17 @@ button:hover {
   gap: 20px;
   /* Add space between cards */
   padding: 20px;
+}
+
+.project-detail img {
+  max-width: 100%;
+  /* Ajusta el tamaño al contenedor */
+  height: auto;
+  /* Mantén la proporción */
+  display: block;
+  /* Elimina espacio extra debajo */
+  margin: 0 auto;
+  /* Centra la imagen */
 }
 
 /* Project Card */
