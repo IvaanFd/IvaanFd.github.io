@@ -75,7 +75,6 @@ p {
 =========================== */
 header {
   background-color: var(--primary-color);
-  /* Mantén el color original */
   color: var(--white);
   padding: 0.5rem 1rem;
   position: sticky;
@@ -85,9 +84,9 @@ header {
   justify-content: center;
   align-items: center;
   box-shadow: none;
-  /* Elimina sombras que puedan dar efecto de cuadro */
+  /* Delete shadows that may give a boxy effect. */
   border: none;
-  /* Asegúrate de que no haya bordes */
+  /* Ensure that there are no edges */
 }
 
 .nav-container {
@@ -112,7 +111,7 @@ header {
 }
 
 /* ===========================
-  Responsive para pantallas pequeñas
+  Responsive for small devices
 =========================== */
 .hamburger-menu {
   display: none;
@@ -133,7 +132,6 @@ header {
     display: none;
     flex-direction: column;
     background-color: var(--primary-color);
-    /* Mantén el color en móvil */
     position: absolute;
     top: 100%;
     left: 0;
@@ -155,13 +153,13 @@ header {
 /* ===========================
    Style for the profile section
 =========================== */
-.hero-section {
+.home-section {
   background-color: transparent;
   /* Remove any background color */
   padding: 50px 20px;
 }
 
-.hero-layout {
+.home-layout {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -170,7 +168,7 @@ header {
   /* Keep image and text inline */
 }
 
-.hero-image img {
+.home-image img {
   width: 450px;
   /* Larger image */
   height: auto;
@@ -182,13 +180,13 @@ header {
   /* Ensure no background */
 }
 
-.hero-text {
+.home-text {
   flex: 1;
   text-align: left;
   /* Left aligned */
 }
 
-.hero-text .subtitle {
+.home-text .subtitle {
   font-size: 1.5rem;
   /* More prominent subtitle */
   margin-top: 10px;
@@ -198,7 +196,7 @@ header {
 }
 
 /* Buttons */
-.hero-buttons {
+.home-buttons {
   display: flex;
   gap: 15px;
 }
@@ -238,13 +236,13 @@ header {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-layout {
+  .home-layout {
     flex-direction: column;
     /* Image and text stacked */
     text-align: center;
   }
 
-  .hero-image img {
+  .home-image img {
     margin-bottom: 20px;
   }
 }
@@ -444,6 +442,17 @@ button:hover {
   gap: 20px;
   /* Add space between cards */
   padding: 20px;
+}
+
+.project-detail img {
+  max-width: 100%;
+  /* Adjust the size to the container */
+  height: auto;
+  /* Maintain the proportion */
+  display: block;
+  /* Remove extra space below */
+  margin: 0 auto;
+  /* Center the image */
 }
 
 /* Project Card */
