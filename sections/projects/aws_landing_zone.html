@@ -1,0 +1,121 @@
+<section id="AWS Landing Zone" class="project-detail">
+
+  <h1>Deployment of a Landing Zone under a Hub-and-Spoke Architecture in AWS</h1>
+
+  <img src="assets/projects/aws_landing_zone.webp" alt="AWS Landing Zone">
+
+  <p>This project focuses on the design and deployment of a <strong>Landing Zone</strong> in AWS, utilizing a
+    <strong>Hub-and-Spoke Architecture</strong> to establish a secure and scalable cloud infrastructure. The Landing
+    Zone was designed to facilitate centralized resource management and structured organization, supporting both
+    development and production environments.
+  </p>
+
+  <p>The primary goal of the project is to create an efficient and automated infrastructure configuration that
+    accelerates deployment cycles, reduces configuration errors, and improves operational reliability. The project
+    includes an initial manual setup phase to familiarize with AWS services, followed by full automation using
+    Infrastructure as Code (IaC) tools like <strong>Terraform</strong> and <strong>Bash</strong> scripting.</p>
+
+  <h2>Infrastructure Overview</h2>
+
+  <h3>High Level Design</h3>
+
+  <img src="assets/projects/Architecture.png" alt="AWS Landing Zone Arch">
+
+  <h3>Explanation</h3>
+  <p>The infrastructure is designed around three distinct environments:</p>
+  <ul>
+    <li><strong>Production:</strong> A dedicated environment with isolated VPCs for running live workloads.</li>
+    <li><strong>Development:</strong> A mirrored environment to Production for testing and development purposes, with
+      CIDR blocks adjusted to avoid overlap.</li>
+    <li><strong>Shared:</strong> A centralized VPC that hosts common resources such as AWS service endpoints, DNS
+      configurations, and other shared services accessible by both Production and Development environments.</li>
+  </ul>
+
+  <h3>Network Architecture</h3>
+  <p>The Hub-and-Spoke architecture ensures each VPC has a clear role:</p>
+  <ul>
+    <li><strong>Shared VPC:</strong> Contains AWS endpoints (e.g., S3, DynamoDB), which are shared across other VPCs.
+    </li>
+    <li><strong>Hub VPC:</strong> Acts as the core network connection point, providing routing to Spoke VPCs.</li>
+    <li><strong>Spoke VPCs:</strong> Include subnets for <em>Front</em>, <em>Back</em>, and <em>Data</em> tiers, each
+      hosting specific EC2 instances or services.</li>
+  </ul>
+
+  <h2>Purpose and Methodology</h2>
+
+  <p>The purpose of this project is to establish a <strong>modular and replicable cloud infrastructure</strong> that can
+    be easily managed and scaled across different environments. The methodology used for deployment includes two main
+    milestones:</p>
+
+  <ol>
+    <li>
+      <strong>Manual Deployment Phase:</strong> Designed to become familiar with AWS services and manually configure key
+      resources such as VPCs, subnets, and peering connections.
+    </li>
+    <li>
+      <strong>Automated Deployment Phase:</strong> <strong>Terraform</strong> was used as an Infrastructure as Code
+      (IaC) tool to automate provisioning processes, complemented by <strong>Bash scripting</strong> to optimize
+      workflows.
+    </li>
+  </ol>
+
+  <p>The main components of the Landing Zone include:</p>
+
+  <ul>
+    <li><strong>Shared VPC:</strong> Hosts shared services such as AWS endpoints and private DNS.</li>
+    <li><strong>Hub VPC:</strong> Centralized environment for managing shared services and connecting to Spoke VPCs.
+    </li>
+    <li><strong>Spoke VPCs:</strong> Isolated environments designed to host development and production workloads.</li>
+    <li><strong>Route tables:</strong> Configured to direct traffic between VPCs via peering connections while
+      maintaining strict control over the allowed routes to ensure security and isolation.</li>
+    <li><strong>VPC Peering:</strong> Establishes secure interconnection between the Hub and Spokes, enabling
+      communication while ensuring no unnecessary traffic flows between unrelated VPCs.</li>
+    <li><strong>Endpoints:</strong> Deployed in the Shared VPC and shared across all Spoke VPCs, allowing
+      efficient access to services like S3 and EC2 without traversing the public internet.</li>
+    <li><strong>NACLs</strong> and <strong>Security Groups:</strong> Configured with reusable, centralized rules to
+      manage inbound and outbound traffic across subnets and instances, reducing redundancy while enforcing strict
+      security controls.</li>
+    <li><strong>Secure Parameters:</strong> Managed in AWS Systems Manager Parameter Store as encrypted
+      <strong>SecureString</strong> values, ensuring sensitive data such as SSH keys and credentials are securely stored
+      and accessed programmatically.
+    </li>
+  </ul>
+
+  <h2>Key Features of This Deployment</h2>
+
+  <ul>
+    <li><strong>Modular Design:</strong> Allows the addition of new VPCs or subnets easily to scale based on
+      organizational needs.</li>
+    <li><strong>Automation:</strong> Terraform ensures consistency and reduces human error in infrastructure
+      configuration.</li>
+    <li><strong>Security and Governance:</strong> Implements AWS best security practices, including Network ACLs,
+      Security Groups, and private hosted zones.</li>
+    <li><strong>Efficiency:</strong> Bash scripts optimize Terraform workflows, automating repetitive tasks and reducing
+      execution time.</li>
+  </ul>
+
+  <h2>Evaluation and Results</h2>
+
+  <p>To assess the success of this deployment, the infrastructure was tested in a controlled environment simulating real
+    production and development needs. The evaluation revealed:</p>
+
+  <ul>
+    <li><strong>Consistent Resource Deployment:</strong> Automation with Terraform ensured identical configurations
+      across all environments.</li>
+    <li><strong>Scalability:</strong> The hub-and-spoke architecture allowed the addition of new VPCs and subnets
+      without reconfiguring the base infrastructure.</li>
+    <li><strong>Reduction in Configuration Errors:</strong> Automated processes minimized human intervention, increasing
+      deployment reliability.</li>
+  </ul>
+
+  <h2>Key Benefits</h2>
+
+  <ul>
+    <li><strong>Centralized Resource Management:</strong> Centralized control of shared services within the Landing
+      Zone.</li>
+    <li><strong>Accelerated Deployment Cycles:</strong> Automation tools enabled faster provisioning and updates.</li>
+    <li><strong>Enhanced Security and Governance:</strong> Compliance with AWS best practices provided a secure
+      foundation for critical applications.</li>
+  </ul>
+
+</section>
