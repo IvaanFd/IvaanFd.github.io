@@ -255,7 +255,102 @@ header {
   padding: 4rem 2rem;
 }
 
-/* Individual card styling */
+/* ===========================
+   Skills Section Styling
+=========================== */
+
+/* Skills Section */
+.skills-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Skills Container */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Individual Skills Card */
+.skills-card {
+  background-color: var(--background-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Title */
+.skills-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.skill-icon {
+  font-size: 2rem;
+  /* Size of the icon */
+  color: var(--primary-color);
+  /* Use primary color */
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  /* Center the icon */
+  align-items: center;
+}
+
+/* Skills List */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Individual Skill Item */
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* Space between icon and text */
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: left;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.skill-item i {
+  font-size: 1.2rem;
+  /* Icon size */
+  margin-right: 0.5rem;
+  /* Space between icon and text */
+  color: var(--primary-color);
+  /* Icon color */
+}
+
+.skill-item::before {
+  content: "•";
+  /* Bullet point */
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+
 .card {
   background-color: var(--background-color);
   /* White background */
@@ -270,40 +365,6 @@ header {
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* Smooth hover effect */
-}
-
-/* Skills style*/
-.skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-color);
-  font-size: 1.5rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.skill-item:hover {
-  transform: scale(1.1);
-  color: var(--secondary-color);
-}
-
-.skill-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.skill-text {
-  font-size: 1rem;
-  color: var(--text-color);
 }
 
 /* General container for the cards */
