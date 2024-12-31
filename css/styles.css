@@ -302,7 +302,7 @@ header {
   text-transform: uppercase;
 }
 
-.card-icon {
+.skill-icon {
   font-size: 2rem;
   color: var(--primary-color);
   /* Green for icons */
