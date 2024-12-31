@@ -293,23 +293,21 @@ header {
 /* Card Title */
 .skills-card-title {
   font-size: 1.5rem;
-  font-weight: bold;
+  /* Slightly larger title */
   color: var(--primary-color);
-  margin-bottom: 1rem;
-  text-transform: uppercase;
+  /* Green color */
+  font-weight: bold;
+  margin-bottom: 15px;
   text-align: center;
+  text-transform: uppercase;
 }
 
-.skill-icon {
+.card-icon {
   font-size: 2rem;
-  /* Size of the icon */
   color: var(--primary-color);
-  /* Use primary color */
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: center;
-  /* Center the icon */
-  align-items: center;
+  /* Green for icons */
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 /* Skills List */
@@ -392,7 +390,7 @@ header {
 /* Icon styling */
 .card-icon {
   font-size: 2rem;
-  color: #28a745;
+  color: var(--primary-color);
   /* Green for icons */
   text-align: center;
   margin-bottom: 15px;
@@ -402,7 +400,7 @@ header {
 .card-title {
   font-size: 1.5rem;
   /* Slightly larger title */
-  color: #28a745;
+  color: var(--primary-color);
   /* Green color */
   font-weight: bold;
   margin-bottom: 15px;
@@ -435,7 +433,7 @@ header {
 
 .card-content .highlight {
   font-weight: bold;
-  color: #28a745;
+  color: var(--primary-color);
   /* Green for highlights */
 }
 
@@ -577,7 +575,7 @@ button:hover {
   font-size: 1.2rem;
   font-weight: bold;
   background-color: var(--background-color);
-  color: #28a745
+  color: var(--primary-color)
 }
 
 .project-card:hover {
