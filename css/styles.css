@@ -255,6 +255,40 @@ header {
   padding: 4rem 2rem;
 }
 
+/* Skills style*/
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: scale(1.1);
+  color: var(--secondary-color);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-text {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
 /* General container for the cards */
 .card-container {
   display: flex;
