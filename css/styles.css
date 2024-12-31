@@ -255,6 +255,23 @@ header {
   padding: 4rem 2rem;
 }
 
+/* Individual card styling */
+.card {
+  background-color: var(--background-color);
+  /* White background */
+  border-radius: 15px;
+  /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  flex: 1;
+  /* Ensure cards take equal space */
+  max-width: 400px;
+  /* Set maximum width for consistent size */
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth hover effect */
+}
+
 /* Skills style*/
 .skills-container {
   display: grid;
@@ -301,23 +318,6 @@ header {
   padding: 20px;
   flex-wrap: nowrap;
   /* Ensure cards stay in the same row */
-}
-
-/* Individual card styling */
-.card {
-  background-color: var(--background-color);
-  /* White background */
-  border-radius: 15px;
-  /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow */
-  flex: 1;
-  /* Ensure cards take equal space */
-  max-width: 400px;
-  /* Set maximum width for consistent size */
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Smooth hover effect */
 }
 
 /* Hover effect for the cards */
