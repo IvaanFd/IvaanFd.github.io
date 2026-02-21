@@ -1,23 +1,108 @@
-<section>
-  <h1>Certifications</h1>
-
-  <p>This section presents the certifications obtained, which can be filtered according to the IT sector to which they
-    belong.</p>
+<section class="certs-section">
+  <div class="section-header">
+    <h1>Certifications</h1>
+    <div class="section-divider"></div>
+    <p>Industry-recognised credentials across Cloud, Cybersecurity and Networking.</p>
+  </div>
 
   <div class="certs-filters">
-    <button onclick="filterCerts('all')"><i class="fas fa-globe"></i> All</button>
-    <button onclick="filterCerts('cyber')"><i class="fas fa-shield-alt"></i> Cybersecurity</button>
-    <button onclick="filterCerts('cloud')"><i class="fas fa-cloud"></i> Cloud</button>
-    <button onclick="filterCerts('network')"><i class="fas fa-network-wired"></i> Network</button>
+    <button onclick="filterCerts('all')" class="active"><i class="fas fa-globe"></i>&nbsp; All</button>
+    <button onclick="filterCerts('cloud')"><i class="fas fa-cloud"></i>&nbsp; Cloud</button>
+    <button onclick="filterCerts('cyber')"><i class="fas fa-shield-alt"></i>&nbsp; Cybersecurity</button>
+    <button onclick="filterCerts('network')"><i class="fas fa-network-wired"></i>&nbsp; Network</button>
   </div>
 
   <div class="certs-gallery">
-    <img src="assets/certs/azure_fundamentals.png" alt="Azure AZ900" class="cert cloud">
-    <img src="assets/certs/iso_27001.png" alt="ISO 27001" class="cert cyber">
-    <img src="assets/certs/aws_cloud_practitioner.png" alt="AWS Cloud Practitioner" class="cert cloud">
-    <img src="assets/certs/google_cloud_digital_leader.png" alt="Google Cloud Digital Leader" class="cert cloud">
-    <img src="assets/certs/terraform_associate.png" alt="Terraform Associate" class="cert cloud">
-    <img src="assets/certs/azure_security.png" alt="Azure SC900" class="cert cyber">
-  </div>
 
+    <!-- Cloud -->
+    <div class="cert-card cert cloud">
+      <div class="cert-img-wrap">
+        <img src="assets/certs/az900.png" alt="Azure AZ-900">
+      </div>
+      <div class="cert-meta">
+        <div class="cert-name">Azure Fundamentals</div>
+        <div class="cert-issuer">Microsoft · AZ-900</div>
+        <span class="cert-badge cloud-badge">Cloud</span>
+      </div>
+    </div>
+
+    <div class="cert-card cert cloud">
+      <div class="cert-img-wrap">
+        <img src="assets/certs/aws_cloud_practitioner.png" alt="AWS Cloud Practitioner">
+      </div>
+      <div class="cert-meta">
+        <div class="cert-name">Cloud Practitioner</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+        <span class="cert-badge cloud-badge">Cloud</span>
+      </div>
+    </div>
+
+    <div class="cert-card cert cloud">
+      <div class="cert-img-wrap">
+        <img src="assets/certs/google_cloud_digital_leader.png" alt="Google Cloud Digital Leader">
+      </div>
+      <div class="cert-meta">
+        <div class="cert-name">Cloud Digital Leader</div>
+        <div class="cert-issuer">Google Cloud</div>
+        <span class="cert-badge cloud-badge">Cloud</span>
+      </div>
+    </div>
+
+    <div class="cert-card cert cloud">
+      <div class="cert-img-wrap">
+        <img src="assets/certs/terraform_associate.png" alt="Terraform Associate">
+      </div>
+      <div class="cert-meta">
+        <div class="cert-name">Terraform Associate</div>
+        <div class="cert-issuer">HashiCorp</div>
+        <span class="cert-badge cloud-badge">Cloud</span>
+      </div>
+    </div>
+
+    <!-- Cybersecurity -->
+    <div class="cert-card cert cyber">
+      <div class="cert-img-wrap">
+        <img src="assets/certs/iso_27001.png" alt="ISO/IEC 27001">
+      </div>
+      <div class="cert-meta">
+        <div class="cert-name">ISO/IEC 27001 Lead Implementer</div>
+        <div class="cert-issuer">PECB</div>
+        <span class="cert-badge cyber-badge">Cybersecurity</span>
+      </div>
+    </div>
+
+    <div class="cert-card cert cyber">
+      <div class="cert-img-wrap">
+        <img src="assets/certs/sc900.png" alt="Microsoft SC-900">
+      </div>
+      <div class="cert-meta">
+        <div class="cert-name">Security, Compliance &amp; Identity Fundamentals</div>
+        <div class="cert-issuer">Microsoft · SC-900</div>
+        <span class="cert-badge cyber-badge">Cybersecurity</span>
+      </div>
+    </div>
+
+    <div class="cert-card cert cyber">
+      <div class="cert-img-wrap">
+        <img src="assets/certs/sc300.png" alt="Microsoft SC-300">
+      </div>
+      <div class="cert-meta">
+        <div class="cert-name">Identity &amp; Access Administrator</div>
+        <div class="cert-issuer">Microsoft · SC-300</div>
+        <span class="cert-badge cyber-badge">Cybersecurity</span>
+      </div>
+    </div>
+
+    <div class="cert-card cert cyber">
+      <div class="cert-img-wrap">
+        <img src="assets/certs/security+.png" alt="CompTIA Security+">
+      </div>
+      <div class="cert-meta">
+        <div class="cert-name">Security+</div>
+        <div class="cert-issuer">CompTIA</div>
+        <span class="cert-badge cyber-badge">Cybersecurity</span>
+      </div>
+    </div>
+
+  </div>
 </section>

@@ -71,15 +71,17 @@ function loadSection(section) {
     });
 }
 
-// Function to filter certificates (same as before)
+// Function to filter certificates
 function filterCerts(category) {
-  const certs = document.querySelectorAll('.cert');
+  const certs = document.querySelectorAll('.certs-gallery .cert');
   certs.forEach(cert => {
-    if (category === 'all') {
-      cert.style.display = 'inline-block';
-    } else {
-      cert.style.display = cert.classList.contains(category) ? 'inline-block' : 'none';
-    }
+    cert.style.display = (category === 'all' || cert.classList.contains(category)) ? '' : 'none';
+  });
+
+  // Update active state on filter buttons
+  document.querySelectorAll('.certs-filters button').forEach(btn => {
+    const btnCategory = (btn.getAttribute('onclick') || '').match(/'([^']+)'/);
+    btn.classList.toggle('active', btnCategory && btnCategory[1] === category);
   });
 }
 
