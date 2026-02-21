@@ -676,8 +676,92 @@ button:hover {
 }
 
 /* ===========================
-   Certifications Section
+   Engagement List (Work Exp)
 =========================== */
+.engagement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1.25rem;
+}
+
+.engagement-item {
+  padding: 1rem 0 1rem 1rem;
+  border-left: 2px solid var(--border);
+  margin-left: 0.25rem;
+  transition: border-color var(--transition);
+}
+
+.engagement-item:hover {
+  border-left-color: var(--primary);
+}
+
+.engagement-item:hover .engagement-title {
+  color: var(--primary);
+}
+
+.engagement-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.engagement-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+.engagement-title i {
+  color: var(--primary);
+  font-size: 0.82rem;
+}
+
+.engagement-sector {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sector-finance {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.sector-health {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.sector-energy {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.sector-retail {
+  background: #fce7f3;
+  color: #be185d;
+}
+
+.engagement-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 100%;
+  text-align: left;
+}
+
+
 .certs-section {
   padding: 5rem 2rem;
   max-width: 1100px;
