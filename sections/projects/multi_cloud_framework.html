@@ -1,0 +1,76 @@
+<section id="Multicloud Governance Framework" class="project-detail">
+  <a class="back-link" href="#projects" onclick="loadSection('projects')">
+    <i class="fas fa-arrow-left" aria-hidden="true"></i> All projects
+  </a>
+
+  <h1>Multicloud Governance and Security Framework</h1>
+
+  <img src="assets/projects/multi_cloud_framework.png" alt="Multicloud Cloud Governance and Security Framework">
+
+  <p>This project defines a <strong>vendor-neutral governance and security framework for multicloud environments</strong>.
+    It provides organizations with a consistent foundation for managing infrastructure across multiple cloud providers
+    while preserving the flexibility to adopt the services best suited to each workload.</p>
+
+  <p>The framework translates governance, security, networking, and operational requirements into <strong>reusable
+      standards and automated controls</strong>. Its objective is to reduce configuration drift, strengthen security,
+    and make cloud deployments more predictable without creating unnecessary dependencies on a single provider.</p>
+
+  <h2>Framework Scope</h2>
+
+  <ul>
+    <li>
+      <strong>Cloud governance:</strong>
+      Standardization of resource organization, naming conventions, tagging, policies, and ownership.
+    </li>
+    <li>
+      <strong>Identity and Access Management:</strong>
+      RBAC, least privilege, privileged access, workload identities, and separation of duties.
+    </li>
+    <li>
+      <strong>Network architecture:</strong>
+      Segmentation, centralized connectivity, hybrid networking, routing, private access, and DNS.
+    </li>
+    <li>
+      <strong>Security baselines:</strong>
+      Definition of minimum security requirements and preventive controls for cloud resources.
+    </li>
+    <li>
+      <strong>Infrastructure as Code:</strong>
+      Reusable Terraform modules and standardized deployment patterns.
+    </li>
+    <li>
+      <strong>Policy as Code:</strong>
+      Automated enforcement and validation of governance and security requirements.
+    </li>
+    <li>
+      <strong>Automation:</strong>
+      Preparation of infrastructure deployments for integration with CI/CD pipelines.
+    </li>
+    <li>
+      <strong>Operational model:</strong>
+      Documented procedures, architectural guidelines, responsibilities, and best practices.
+    </li>
+  </ul>
+
+  <h2>Design Principles</h2>
+
+  <p>The framework follows a common-control approach: organizational requirements are defined once and then mapped to
+    the native capabilities of each cloud provider. Shared standards govern identity, connectivity, resource
+    organization, and security, while provider-specific implementations remain modular and replaceable.</p>
+
+  <ol>
+    <li><strong>Standardize:</strong> Establish a common vocabulary, ownership model, and minimum control baseline.</li>
+    <li><strong>Automate:</strong> Convert infrastructure and policy requirements into reusable, version-controlled code.</li>
+    <li><strong>Validate:</strong> Detect non-compliant configurations before deployment and continuously assess deployed resources.</li>
+    <li><strong>Operate:</strong> Document responsibilities and procedures so the framework remains sustainable at scale.</li>
+  </ol>
+
+  <h2>Expected Outcomes</h2>
+
+  <ul>
+    <li><strong>Consistent governance:</strong> A unified control model across cloud platforms and environments.</li>
+    <li><strong>Reduced risk:</strong> Preventive guardrails and secure defaults reduce exposure caused by misconfiguration.</li>
+    <li><strong>Repeatable delivery:</strong> Reusable Terraform patterns accelerate deployment without sacrificing control.</li>
+    <li><strong>Clear accountability:</strong> Defined ownership and operating procedures support auditability and effective cloud operations.</li>
+  </ul>
+</section>

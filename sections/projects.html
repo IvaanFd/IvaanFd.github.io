@@ -2,52 +2,70 @@
   <div class="section-header">
     <h1>Projects</h1>
     <div class="section-divider"></div>
-    <p>A selection of technical projects spanning cloud infrastructure, cybersecurity, and software development.</p>
+    <p>Selected work in cloud security, governance, architecture, and practical financial education.</p>
   </div>
 
   <div class="projects-container">
-
-    <div class="project-card">
-      <a href="#" onclick="loadSection('projects/ffit')">
-        <img src="assets/projects/ffit.webp" alt="FFit App">
-        <div class="project-title">FFit mobile app</div>
+    <article class="project-card">
+      <a href="#" onclick="loadSection('projects/cnapp_prisma'); return false;">
+        <img src="assets/projects/cnapp_prisma_v3.png"
+          alt="Cloud-Native Application Protection Platform with Prisma Cloud">
+        <div class="project-card-content">
+          <span class="project-category">Cloud Security</span>
+          <h2 class="project-title">CNAPP with Prisma Cloud</h2>
+          <p>Centralized posture, identity, vulnerability, and workload protection across multicloud environments.</p>
+          <span class="project-link">Explore project <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
       </a>
-    </div>
+    </article>
 
-    <div class="project-card">
-      <a href="#" onclick="loadSection('projects/aws_landing_zone')">
+    <article class="project-card">
+      <a href="#" onclick="loadSection('projects/ssdlc_framework'); return false;">
+        <img src="assets/projects/ssdlc_v1.png" alt="Secure Software Development Life Cycle framework">
+        <div class="project-card-content">
+          <span class="project-category">Application Security</span>
+          <h2 class="project-title">Secure Development Lifecycle</h2>
+          <p>A repeatable SSDLC framework that embeds risk-based security controls throughout software delivery.</p>
+          <span class="project-link">Explore project <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </a>
+    </article>
+
+    <article class="project-card">
+      <a href="#" onclick="loadSection('projects/multi_cloud_framework'); return false;">
+        <img src="assets/projects/multi_cloud_framework.png"
+          alt="Multicloud Cloud Governance and Security Framework">
+        <div class="project-card-content">
+          <span class="project-category">Cloud Governance &amp; Security</span>
+          <h2 class="project-title">Multicloud Governance Framework</h2>
+          <p>A vendor-neutral framework for consistent governance, security, and automated cloud delivery.</p>
+          <span class="project-link">Explore project <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </a>
+    </article>
+
+    <article class="project-card">
+      <a href="#" onclick="loadSection('projects/aws_landing_zone'); return false;">
         <img src="assets/projects/aws_landing_zone.webp" alt="AWS Landing Zone">
-        <div class="project-title">Deployment of a Landing Zone under a Hub-and-Spoke Architecture in AWS</div>
+        <div class="project-card-content">
+          <span class="project-category">Cloud Architecture</span>
+          <h2 class="project-title">AWS Landing Zone</h2>
+          <p>Secure, scalable hub-and-spoke infrastructure automated with Terraform and Bash.</p>
+          <span class="project-link">Explore project <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
       </a>
-    </div>
+    </article>
 
-    <div class="project-card">
-      <a href="#" onclick="loadSection('projects/financial_conference')">
+    <article class="project-card">
+      <a href="#" onclick="loadSection('projects/financial_conference'); return false;">
         <img src="assets/projects/financial_conference.webp" alt="Financial Conference">
-        <div class="project-title">Personal Finance & Introduction to Investment</div>
+        <div class="project-card-content">
+          <span class="project-category">Financial Education</span>
+          <h2 class="project-title">Personal Finance &amp; Investment</h2>
+          <p>An accessible conference designed to turn financial concepts into practical decisions.</p>
+          <span class="project-link">Explore project <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
       </a>
-    </div>
-
-    <div class="project-card">
-      <a href="#" onclick="loadSection('projects/internal_audit_methodology')">
-        <img src="assets/projects/internal_audit_methodology.webp" alt="Internal Auditr Methodology">
-        <div class="project-title">Methodology for Infrastructure Audits</div>
-      </a>
-    </div>
-
-    <div class="project-card">
-      <a href="#" onclick="loadSection('projects/computer_science_notes')">
-        <img src="assets/projects/computer_science_tools.jpeg" alt="Computer Science Notes">
-        <div class="project-title">Computer Science Notes</div>
-      </a>
-    </div>
-
-    <div class="project-card">
-      <a href="#" onclick="loadSection('projects/cyber_tools')">
-        <img src="assets/projects/cyber_tools.webp" alt="IT Security Tools">
-        <div class="project-title">Development of IT Security Tools</div>
-      </a>
-    </div>
-
+    </article>
   </div>
 </section>

@@ -1,60 +1,46 @@
 // Function to toggle the hamburger menu
 function toggleMenu() {
-  const navMenu = document.getElementById('nav-menu'); // Select the menu by ID
+  const navMenu = document.getElementById('nav-menu');
+  const hamburgerButton = document.querySelector('.hamburger-menu');
   if (navMenu) {
-    navMenu.classList.toggle('open'); // Toggle the 'open' class to show/hide
-  } else {
-    console.error("Element with ID 'nav-menu' not found"); // Error if the menu is not found
+    const isOpen = navMenu.classList.toggle('open');
+    hamburgerButton?.setAttribute('aria-expanded', String(isOpen));
   }
 }
 
 // Function to close the menu when clicking on a link
 function closeMenu() {
   const navMenu = document.getElementById('nav-menu');
-  if (navMenu && navMenu.classList.contains('open')) {
-    navMenu.classList.remove('open'); // Remove the 'open' class
-    console.log("Menu closed when clicking on a link");
-  }
-  else {
-    console.error("Element with ID 'nav-menu' not found"); // Error if the menu is not found
-  }
+  navMenu?.classList.remove('open');
+  document.querySelector('.hamburger-menu')?.setAttribute('aria-expanded', 'false');
 }
 
 // Ensure the DOM is ready before adding events
 document.addEventListener('DOMContentLoaded', () => {
   const hamburgerButton = document.querySelector('.hamburger-menu');
-  const menuLinks = document.querySelectorAll('.nav-container a'); // Select all menu links
-  const certFilterButtons = document.querySelectorAll('.certs-filters button'); // Buttons to filter certificates
+  const menuLinks = document.querySelectorAll('.nav-container a');
 
   if (hamburgerButton) {
-    hamburgerButton.addEventListener('click', toggleMenu); // Event to toggle the menu
-    console.log("Hamburger button ready");
+    hamburgerButton.addEventListener('click', toggleMenu);
   }
 
-  // Add an event to each link to close the menu when clicking
   menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      closeMenu(); // Close the menu
-      const section = link.getAttribute('onclick').match(/'([^']+)'/)[1]; // Get the section name
-      loadSection(section); // Load the corresponding section
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      closeMenu();
+      loadSection(link.dataset.section);
     });
   });
 
-  // Add an event to each certificate filter button
-  certFilterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const category = button.getAttribute('onclick').match(/'([^']+)'/)[1]; // Get the category
-      filterCerts(category); // Filter the certificates
-    });
-  });
-
-  // Load the initial section (e.g., Home)
-  console.log("Loading the initial section");
-  loadSection('home');
+  loadSection(window.location.hash.slice(1) || 'home');
 });
 
 // Function to dynamically load sections
 function loadSection(section) {
+  const content = document.getElementById('content');
+  const topLevelSection = section.split('/')[0];
+
+  content.classList.add('is-loading');
   fetch(`sections/${section}.html`)
     .then(response => {
       if (!response.ok) {
@@ -63,11 +49,20 @@ function loadSection(section) {
       return response.text();
     })
     .then(html => {
-      document.getElementById('content').innerHTML = html;
+      content.innerHTML = html;
+      content.classList.remove('is-loading');
+      window.location.hash = section;
+      document.querySelectorAll('.nav-container a').forEach(link => {
+        const isActive = link.dataset.section === topLevelSection;
+        link.classList.toggle('active-nav', isActive);
+        link.toggleAttribute('aria-current', isActive);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     })
     .catch(error => {
       console.error(error);
-      document.getElementById('content').innerHTML = `<p>Error loading section.</p>`;
+      content.classList.remove('is-loading');
+      content.innerHTML = '<p class="load-error">This section could not be loaded. Please try again.</p>';
     });
 }
 
@@ -85,7 +80,3 @@ function filterCerts(category) {
   });
 }
 
-// Load the initial section (e.g., Home)
-window.onload = function () {
-  loadSection('home');
-};
